@@ -13,15 +13,23 @@ angular.module('AddressBook', [])
     .controller('AddressController', function($scope) {
         $scope.employees = pawneeEmployees;
         $scope.sortCol = 'lastName';
+        $scope.ifSortedBy = function(name) {
+            return name === $scope.sortCol;
+        }
         $scope.searchString = '';
+        $scope.sortReverse = false;
         $scope.isActive = false;
+
         $scope.sortBy = function(colName) {
+            $scope.isActive = true;
             if($scope.sortCol == colName) {
-                $scope.isActive = true;
+                 $scope.sortReverse = !$scope.sortReverse;
             }
             else {
-                $scope.isActive = false;
+                 $scope.sortReverse = false;
+
             }
             $scope.sortCol = colName;
+            $scope.isActive = false;
         };
     });

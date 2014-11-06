@@ -24,11 +24,11 @@
                 <div class="sort-ui">
                     <span>Sort By: </span>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default" ng-model="button1"
+                        <button type="button" class="btn btn-default" ng-class="{active: ifSortedBy}"
                         ng-click="sortBy('lastName')">Last Name</button>
-                        <button type="button" class="btn btn-default" ng-model="button2" 
+                        <button type="button" class="btn btn-default" ng-class="{active: ifSortedBy}"
                         ng-click="sortBy('firstName')">First Name</button>
-                        <button type="button" class="btn btn-default" ng-model="button3" 
+                        <button type="button" class="btn btn-default" ng-class="{active: ifSortedBy}"
                         ng-click="sortBy('department')">Department</button>
                     </div>
                 </div>
@@ -38,9 +38,10 @@
                 </div>
             </section>
 
+
             <section>
                 <ul class="cards">
-                    <li class="card" ng-repeat="employee in employees | filter : searchString | orderBy : sortCol">
+                    <li class="card" ng-repeat="employee in employees | filter : searchString | orderBy : sortCol : sortReverse">
                         <!-- this img should show the employee picture --> 
                         <img ng-src="{{employee.picUrl}}" alt="Picture of {{employee.firstName}} {{employee.lastName}}">
                         <div class="details">
