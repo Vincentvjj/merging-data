@@ -24,9 +24,12 @@
                 <div class="sort-ui">
                     <span>Sort By: </span>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default" ng-click="sortBy('lastName')">Last Name</button>
-                        <button type="button" class="btn btn-default" ng-click="sortBy('firstName')">First Name</button>
-                        <button type="button" class="btn btn-default" ng-click="sortBy('department')">Department</button>
+                        <button type="button" class="btn btn-default" ng-model="button1"
+                        ng-click="sortBy('lastName')">Last Name</button>
+                        <button type="button" class="btn btn-default" ng-model="button2" 
+                        ng-click="sortBy('firstName')">First Name</button>
+                        <button type="button" class="btn btn-default" ng-model="button3" 
+                        ng-click="sortBy('department')">Department</button>
                     </div>
                 </div>
                 <!-- filter input; you will add attributes to make this filter the list based on value entered -->
