@@ -14,12 +14,7 @@ angular.module('AddressBook', [])
         $scope.employees = pawneeEmployees;
         $scope.sortCol = 'lastName';
         $scope.ifSortedBy = function(name) {
-            if($scope.sortCol == name) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            return ($scope.sortCol == name) 
         }
         $scope.searchString = '';
 
